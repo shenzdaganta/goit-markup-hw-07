@@ -335,10 +335,9 @@
     list-style: none;
     padding-left: 0;
     padding-top: 8px;
-    margin-left: 156px;
-    margin-right: 156px;
     gap: 24px;
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -350,7 +349,6 @@
     line-height: 24px; /* 150% */
     letter-spacing: 0.32px;
     color: var(--SLATE);
-    flex-wrap: wrap;
 }
 
 .icon-hero {
@@ -394,7 +392,7 @@
 .team {
     background-color: var(--CLOUD);
     width: 100%;
-    height: 732px;
+
 }
 
 .teamsection {
@@ -463,6 +461,8 @@
     fill: var(--CLOUD);
 }
 
+/*Customer style start*/
+
 .customers {
     text-align: center;
     font-family: Roboto;
@@ -479,12 +479,12 @@
 .customersection {
     background-color: var(--WHITE);
     width: 100%;
-    height: 780px;
    
 }
 
 .icon-customer {
     display: flex;
+    flex-wrap: wrap;
     flex-basis: calc(100% / 2 - 16px);
     gap: 24px;
     justify-content: center;
@@ -515,14 +515,15 @@
     padding-bottom: 16px;
 }
 
+/*customer style end*/
 
+/*Footer Style Start*/
 
 .footer {
     background-color: var(--NAVYBLUE);
     width: 100%;
-    height: 312px;
-    padding-top: 101.5px;
-    padding-left: 156px;
+    padding-top: 90px;
+    padding-bottom: 90px;
 }
 
 .logofooter span {
@@ -542,6 +543,7 @@
     text-transform: uppercase;
     
 }
+
 
 .footerqoute {
     color: var(--CLOUD);
@@ -569,19 +571,19 @@
 }
 
 .footersection {
-
-    gap: 120px;
-    display: inline-flex
-    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 72px;
 }
 
 .input-subscribe {
     border: 1px solid white;
     background: none;
     border-radius: 4px;
-    width: 264px;
+    width: -webkit-fill-available;
     height: 40px;
-    margin-right: 24px;
+    margin-right: 0;
 }
 
 .input-subscribe::placeholder {
@@ -614,6 +616,7 @@
 .button-subscribe {
     border-radius: 4px;
     background: var(--IRIS);
+    margin-top: 24px;
 }
 
 .button-subscribe:hover {
@@ -753,7 +756,13 @@
 
     .customer-items {
         flex-basis: calc(100% / 3 - 16px);
+        
    }
+
+    .input-subscribe {
+         width: 264px;
+        margin-right: 24px;
+    }
 
 }
 
@@ -768,5 +777,27 @@
 
     .customer-items {
         flex-basis: calc(100% /6 - 16px);
+    }
+
+   
+}
+
+@media (max-width: 767px) {
+    .footer {
+        text-align: center;
+    }
+
+    .footersection {
+        justify-content: center;
+    }
+
+    .whatwedo {
+        display: none;
+    }
+}
+
+@media (max-width: 428px) {
+    .footersection {
+        justify-content: center;
     }
 }
