@@ -133,6 +133,7 @@
     font-weight: 700;
     line-height: 60px; /* 107.143% */
     letter-spacing: 1.12px;
+    text-wrap: nowrap;
     
 
 }
@@ -424,6 +425,7 @@
 .teamcard {
     display: inline-flex;
     padding-bottom: 0px;
+    margin-bottom: 120px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -490,7 +492,7 @@
     justify-content: center;
     align-items: center;
     list-style: none;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     
 }
 
@@ -507,13 +509,15 @@
     flex-shrink: 0;
     margin-top: 72px;
     margin-bottom: 120px;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .icon-customersvg {
-    padding-left: 32px;
+    padding-left: 0px;
     padding-top: 16px;
-    padding-right: 32px;
+    padding-right: 0px;
     padding-bottom: 16px;
 }
 
@@ -810,14 +814,24 @@
         margin-top: 0px;
     }
 
+    .teamcard {
+        margin-bottom: 96px;
+    }
+
 }
 
-@media (max-width: 428px) {
+@media (max-width: 427px) {
     .footersection {
         justify-content: center;
     }
 
     .hero-items h3 {
         text-align: center;
+    }
+
+    .h1 {
+        font-size: 36px;
+        letter-spacing: 0.72px;
+        line-height: 1.11;
     }
 }
