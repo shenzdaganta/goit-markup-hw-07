@@ -128,13 +128,14 @@
 .mobile-menu {
     display: none;
     position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
 }
 
 .mobile-menu-container {
     position: relative;
-    height: 100%;
-    width: 100%;
-    padding: 0;
+    padding: 40px 40px 0px 40px;
 }
 
 .mobile-nav {
