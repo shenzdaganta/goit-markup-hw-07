@@ -118,21 +118,23 @@
    
 }
 
-.mobile {
+.mobile-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0px;
-    position: relative;
+    padding: 24px 24px;
 }
 
 .mobile-menu {
     display: none;
-
+    position: relative;
 }
 
 .mobile-menu-container {
-
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0;
 }
 
 .mobile-nav {
@@ -142,13 +144,51 @@
     justify-content: space-between;
 }
 
+.mobile-links {
+    list-style-type: none;
+}
+
+.mobile-link {
+    font-size: 36px;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--NAVYBLUE);
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+.mobile-contact {
+    color: var(--NAVYBLUE);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 48px;
+}
+
+.mobile-link.mobile-active {
+    color: var(--OCEAN);
+}
+
+.mobile-link a:hover {
+    color: var(--OCEAN);
+}
+
+.mobile-menu-close {
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--WHITE);
+}
+
+
 .hero {
     background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7) ), url("../images/peopleoffice.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
-    padding: 188px 472px;
+    justify-content: center;
+    padding-top: 188px;
+    padding-bottom: 188px;
     margin-top: 5px;
+    width: 100%;
 }
 
 .h1 {
@@ -161,6 +201,7 @@
     line-height: 60px; /* 107.143% */
     letter-spacing: 1.12px;
     text-wrap: nowrap;
+    width: 100%;
 }
 
 .button {
@@ -444,6 +485,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
     
 }
 
@@ -471,6 +513,7 @@
     display: flex;
     justify-content: space-around;
     gap: 24px;
+    padding-bottom: 40px;
 }
 
 .icon-social {
@@ -513,7 +556,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-basis: calc(100% / 2 - 16px);
-    gap: 24px;
+    gap: 15px;
     justify-content: center;
     align-items: center;
     list-style: none;
@@ -667,6 +710,7 @@
     display: flex;
     justify-content: center;
     gap: 24px;
+    flex-wrap: wrap;
 }
 
 .btnport:hover {
@@ -770,15 +814,14 @@
 
 /*CSS Media Query Style*/
 
-@media (min-width: 428px) {
-    .container {
-        width: 428px;
-    }
-}
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1157px) {
     .container {
         width: 768px;
+    }
+
+    .app {
+        flex-basis: calc(100% / 2 - 24px);
     }
 
     .hero-items, .teamlist {
@@ -795,13 +838,18 @@
         margin-right: 24px;
     }
 
-    .mobile-navbar {
+    .mobile-navbar, .js-close-menu {
         display: none;
     }
 
     .icon-hero {
         display: none;
     }
+
+    .whatwedo {
+        display: none;
+    }
+
 
 }
 
@@ -810,12 +858,16 @@
         width: 1158px;
     }
 
+    .app {
+        flex-basis: calc(100% / 3 - 24px);
+    }
+
     .hero-items {
         flex-basis: calc(100% / 4 - 24px);
     }
 
     .customer-items {
-        flex-basis: calc(100% /6 - 16px);
+        flex-basis: calc(100% / 6 - 16px);
     }
 
     .desktop-navcontact {
@@ -823,9 +875,18 @@
         column-gap: 30px;
     }
 
+    .mobile-navbar {
+        display: none;
+    }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 428px) and (max-width: 767px) {
+    .h1 {
+        font-size: 36px;
+        letter-spacing: 0.72px;
+        line-height: 1.11;
+    }
+   
     .footer {
         text-align: center;
     }
@@ -845,6 +906,7 @@
     .hero-items h3 {
         font-size: 36px;
         margin-bottom: 8px;
+        text-align: center;
     }
 
     .hero-items p {
@@ -860,10 +922,11 @@
     }
 
     .mobile-menu.is-open {
-        transform: translateX();
+        transform: translateX(0);
     }
 
-    .mobile-menu {
+    .mobile-menu.is-open {
+        top: 0;
         display: block;
         height: 100vh;
         width: 100vh;
@@ -876,14 +939,18 @@
     .js-close-menu {
         position: absolute;
         top: 10px;
-        right: 25px;
-          
+        right: 25px; 
     }
+
 }
 
-@media (max-width: 427px) {
+@media (min-width: 320px) and (max-width: 427px) {
     .footersection {
         justify-content: center;
+    }
+
+    .footer {
+        text-align: center;
     }
 
     .hero-items h3 {
@@ -894,5 +961,21 @@
         font-size: 36px;
         letter-spacing: 0.72px;
         line-height: 1.11;
+    }
+
+    .icon-hero {
+        display: none;
+    }
+
+    .whatwedo {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .customer-items {
+        flex-basis: calc(100% / 2 - 16px);
     }
 }
